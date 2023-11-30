@@ -1,4 +1,4 @@
-package umc.spring1.domain.apiPayload;
+package umc.spring1.apiPayload.code;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

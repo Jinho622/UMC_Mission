@@ -1,26 +1,36 @@
 package umc.spring1.apiPayload.code.status;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import umc.spring1.apiPayload.code.BaseCode;
 import umc.spring1.apiPayload.code.ErrorReasonDTO;
 import umc.spring1.apiPayload.code.ReasonDTO;
 
-public enum SuccessSatus implements BaseCode {
+@Getter
+@AllArgsConstructor
+public enum SuccessStatus implements BaseCode{
+
     // 가장 일반적인 응답
-    _INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "COMMON500", "서버 에러, 관리자에게 문의 바랍니다."),
-    _BAD_REQUEST(HttpStatus.BAD_REQUEST,"COMMON400","잘못된 요청입니다."),
-    _UNAUTHORIZED(HttpStatus.UNAUTHORIZED,"COMMON401","인증이 필요합니다."),
-    _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "금지된 요청입니다."),
-    ;
-
-    // 멤버 관련 응답
-
-    // ~~~ 관련 응답 ....
-
+    _OK(HttpStatus.OK, "2000", "OK");
 
     private final HttpStatus httpStatus;
     private final String code;
     private final String message;
+
+//    public String getCode() {
+//        return "2000";
+//    }
+//
+//    public ReasonDTO getMessage() {
+//        return ReasonDTO.builder()
+//                .message(message)
+//                .code(code)
+//                .isSuccess(false)
+//                .httpStatus(httpStatus)
+//                .build()
+//                ;
+//    }
 
     @Override
     public ReasonDTO getReason() {
@@ -38,7 +48,6 @@ public enum SuccessSatus implements BaseCode {
                 .code(code)
                 .isSuccess(false)
                 .httpStatus(httpStatus)
-                .build()
-                ;
+                .build();
     }
 }

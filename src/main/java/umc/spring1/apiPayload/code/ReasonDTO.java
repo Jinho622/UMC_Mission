@@ -27,12 +27,12 @@ public class ReasonDTO {
         return httpStatus;
     }
 
-    @Builder
-    public ReasonDTO(Boolean isSuccess, String code, String message) {
-        this.isSuccess = isSuccess;
-        this.code = code;
-        this.message = message;
-    }
+//    @Builder
+//    public ReasonDTO(Boolean isSuccess, String code, String message) {
+//        this.isSuccess = isSuccess;
+//        this.code = code;
+//        this.message = message;
+//    }
 
     @Builder
     public ReasonDTO(Boolean isSuccess, String code, String message, HttpStatus httpStatus) {

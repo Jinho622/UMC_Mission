@@ -26,12 +26,12 @@ public class ErrorReasonDTO {
         return httpStatus;
     }
 
-    @Builder
-    public ErrorReasonDTO(Boolean isSuccess, String code, String message) {
-        this.isSuccess = isSuccess;
-        this.code = code;
-        this.message = message;
-    }
+//    @Builder
+//    public ErrorReasonDTO(Boolean isSuccess, String code, String message) {
+//        this.isSuccess = isSuccess;
+//        this.code = code;
+//        this.message = message;
+//    }
 
     @Builder
     public ErrorReasonDTO(Boolean isSuccess, String code, String message, HttpStatus httpStatus) {
